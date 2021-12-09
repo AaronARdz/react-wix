@@ -4,17 +4,16 @@ import API from '../../api/index';
 class Header extends React.Component  {
   constructor(props) {
     super(props);
-    this.state = {
-      token: ""
-    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(value) {
+    this.props.onTokenChange(value);
   }
 
   refresh() {
-    API.refreshToken().then((res) => {
-      console.log(res.data);
-      this.setState({
-        token: res.data.data.accessToken
-      });
+    API.refreshToken().then((res) => {;
+      this.handleChange(res.data.data.accessToken)
     })
     .catch((error) => {
       console.log(error)
@@ -22,7 +21,7 @@ class Header extends React.Component  {
   }
 
   render() {
-    const currentToken = this.state.token;
+    const currentToken = this.props.token;
 
     return (
       <section className="py-5 text-center container">

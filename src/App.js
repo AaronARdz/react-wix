@@ -1,12 +1,12 @@
 import Nav from './components/Nav/Nav';
-import Header from './components/Header/Header';
+import Body from './components/Body/Body'
 import './App.css';
 
 function App() {
   return (
     <div>
       <Nav />
-      <Header />
+      <Body />
     </div>
   );
 }

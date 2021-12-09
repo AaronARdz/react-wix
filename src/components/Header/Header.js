@@ -22,8 +22,6 @@ class Header extends React.Component  {
   }
 
   render() {
-    const currentToken = this.props.token;
-
     return (
       <section className="py-5 text-center container">
         <div className="row py-lg-5">

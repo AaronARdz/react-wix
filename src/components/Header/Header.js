@@ -13,6 +13,7 @@ class Header extends React.Component  {
 
   refresh() {
     API.refreshToken().then((res) => {;
+      console.log(res)
       this.handleChange(res.data.data.accessToken)
     })
     .catch((error) => {
@@ -32,7 +33,6 @@ class Header extends React.Component  {
             <p>
               <button onClick={() => this.refresh()} className="btn btn-primary my-2" >Refresh Token</button>
             </p>
-            <p>{currentToken}</p>
           </div>
         </div>
       </section>
@@ -40,4 +40,4 @@ class Header extends React.Component  {
   }
 }
 
-export default Header
+export default Header;

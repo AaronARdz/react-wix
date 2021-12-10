@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+# WeShip Prueba técnica
+Obtener la información referente a la órdenes que se tienen en la tienda
+en línea utilizando **NodeJs** y desplegarla utilizando un app web en **React**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# NodeJs Api wrapper
 
-## Available Scripts
+Contains API wrapper to clean data coming from the original API, and facilitate Token request
 
-In the project directory, you can run:
+**Routes**
+-  Contains backend endpoints.
+	> Receives body request and calls assigned controller.
 
-### `npm start`
+**Controllers**
+-  Contains controllers for each of the modules, handles verification and data cleaning, each one calls the correct wix API endpoint
+	> Returns API response in Json Format
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**API**
+-  Contains all Wix API endpoints.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# React Client
 
-### `npm test`
+Simple client web page to show API information.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**API**
+-  Contains all server endpoints
 
-### `npm run build`
+**Components**
+-  Contains Body, Header and Nav Components
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Body Component**
+- Parent component, Handles all logic.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## FlowDiagram
+[Link to flow diagram](https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&nav=1&title=WixApiTest#R7Z1Ze6o8EIB%2FTS%2FxYV8u1Wqxm1q1Pe1NH0RUWhQLuHHx%2FfYvYVHQiOmignLORWXYyTuTSSaZXDHl0eLGUibDB7OnGVc02VtcMddXNE1zEgP%2BQMkylMBNKBlYes%2BXUWtBS3e1QEgG0qne0%2BzYgY5pGo4%2BiQtVczzWVCcmUyzLnMcP65tG%2FK4TZaBtCVqqYmxLX%2FSeM%2FSlIi2s5bKmD4bhnSle8veMlPDg4E3sodIz5xERU7liypZpOv6v0aKsGfDrhd%2FFP6%2B6Y%2B%2FqwSxt7CBO6NiaVe9%2BwG9Ck4bSBQXjHVQ2dHCC5p9tTFW9pw4Vy%2FEPrQUXt2qyW%2Fqq390z3YF%2FZHjb6yeTM6bCdfv%2BdsLUl9fOM%2FVKUKvXWT2m7SzDTzh0RvDe1BVTMmea1Te8r9A1TPUTiLy%2FrYmi6uNBcNR8qDsaFMELzAFYQAa%2B3gRujhYDSFphrDlz0%2Fq0CxMV7O3rhlE2DdPy7sjQUrFYgVeyHcv81CJ7%2Bt4%2FsMf7Ig3T1h3dHIN9Kvwo4KASeEJHB%2BV%2Fv3FA13QccwQOUAx9gDyjGOxwTPjAO96jb46dgHKKLwiBJPKE%2Fj%2F47KtvQq7epA5lDtQlioRSy5yOe1ov%2BG5K1zaNqaMVLTW8BZSutqTVdUKU6QK8k1%2FC8DW0xU64omV8o5kjzbGW4JDgBCaAPFBzluL97flaZyguOGYY1RdaDHQ10NPB6tJrlMGPgKtwMwJ3IuzJlDcA5QP2USnWlh0Mymlcyj80x1mGJSBigMCgUOUq8P9WkVEFbrvg1wUOnrCk9YAJC57MtJyhOTDHilFZS8ElwccoQvMIDhmbY80HVhv3QmGonkBU1Y3wzaBgoTv%2FIJTec8Ct12An%2FN3QLB2UH9QLD1uAj7WMHA434fEEWSCplWTzLL8w4Gsk4wgKwJxaqrbPNIE6Q7EGmpNwHIPGO8ovieI3FFqaoTj6LP7AKKi9e4CvrCwjB0xMfezYW8yvHuSXanCjQUFRVTXbbgOWxsl6QQO9cDu3%2FTvu5hVDLxhcvfi59f%2B1Md0y2mvrKiGVT4P%2F0293WS5md%2FkQxyi3NIJbgfsLs7vllCD54AMTH4Fiv4Vaf2H4vdfH3Juwdt0ys8rUMYEoAltop6iIlVrbrOtFaKDgxjKysWmLYqZSNRTb1tVQHLWMf2eyWEyTxQtoNLBN0Y6C3mVFWpo103tAQxKNx8et7D4Kjr14sAoYxoM9oesI3nPmGYPcfTyxGaMoNu5AciK3Zch4ZP3LnM5%2F1B5ll2gYamtKvGOgzqWintxTGzIFMcv1ISPEK0R2GyMA1zZHXNjfcBiOgANW9EyMAXYBg2Ang6XUZbdz%2F25XRvUvDLD4VIB1oQ4YxcSAE7aBQzZ82T9xwBJ4W8NWWgKuEnkrAt7mZZGdNh8lDN6EnLfU8LaC67TAlS1NcbQ1c8m8lRuy%2B9QzK11rPsTgTcx5Sw1vq9rztLx1Jr1v8MYB3hz77ea1Wqpj8CblvKWGNwbVo3F83oq9XsMye1PVaZu41GlN2eVkmifGbzjNA4pMBXZUjl20HXFa7JIBqwDA3kmtWC5LHA5gRwjT%2Fb4BelYYsbjeGX%2FQ5ucVzRvgkFJPn8XKnP%2Bamr7cnhgKeOYi2N034OuDr0F%2BTG1H7y8JFZSe9wHg7lWRwS5KbeEQQVlu7vPEBEBhZPs7u4qtGbofaoKB%2BLFD2F6BwJ1%2B1IeE%2B4nwu0A5VaBhl%2B1IsQb6mPC6xqCYoCf%2BM4ZvAH4Ngr%2FemwKexmgZ4vWjz0IxBca7turTV4xav%2B37PWkjoCxB1WBXLXME9oBTKDJyY1BSqOfZLfbKKS7Ni%2B6viy5ajf9FOSVZ6q%2BW7Faa%2FcV%2F4lMfx1Jjh5oPbqnRPYNrAwxLH3afxyXfN8gbXfCrjvZDGWqajRtqnto21OHYhKihZqSDNqOjPYTkA7Aqxp6ROnWPLIWZfSpYPkDGg7VnBSEjIbwDEeVknnCQjNgBTmZxKN%2FOX25xADtCQO%2F3TmbWoxw8H7NePAMj21iBjtVogIN1PNfGM%2FAaZnDFnVz1nmXX%2FajWhp%2BvOg5X6Yie5Z0yHm88wnAx1LGbNRHSsOrKJkDO7D28z6aygoNcxuNq51lXJgwQQNedJ%2BygmfyT3c7sQ1XGbAkHuHQE1s687twYISAiAhromlM8dM0ZdCOUlrXrZK4qgKvp3bKoPpdnOFzlAbQT1p1knDeJQdSdPIK3g48QKBpG2HGVjNvgVXZnd82u8zDBGR5A5fGzU7pq8Y4NkUPUkyyfrnqSB4A9TV%2FMsn4vYABGY0fKLmImBlUgSekKNcp552wMOP3CPyeckBGZn3HA2RhBM2Lv0OZYa%2B%2FspmPssbZvstu4G4xLQmeCowzYUb1cGRKUQYwrA8%2BJaVIH6XLVYQzUoUqwk8nsWsZRB%2BzQSa4OCeogpLhuEC9XGWZAGb6mypujmlh1A3a0J1eGHdNWU6wH9OXqQQ3ogVMZf1xf2zjBAxo7KJXrAX6lwIhMmtSBvFx1qAN16Lav%2B%2B3lq4mjDtixtFwdsukjXXB7oQV04VlqDxdSR8PRBewgX64L%2BM3nNOnCBTcXnoEuvCmv5G19TODoAnb8MdeFbNYLOzJGXIIukEAXOtXPx8pN6Q1HF7BjprkuZFMX%2BMvVhS4lu8Ti83ry%2BA8nvwCdjoDueY9LEZj9mStYBI8Hzlwht9sNIPGzRoIfT9rXVLOdZL4YwJdeqJlUn8bhi0nHzMd8oJ3HYTgTIpzwvYVh6obZjWjZvbNvvwZPE5zhUEwm5kGeF1Qbg6BQs2tPQVVVjU64qSqQhSTSZEDae%2B1LXpoPOPO4GOxgZDoN209GQsXp%2FGklu8GnJPXoPn1APjlxP5%2BI2WDH5TOJTJMBTX1rPCvZNotDZsbngaWGTIXpSYJwPDKR%2BX5OjCbc8PL%2FJCN6CxCVZ8JE%2FVf5wEE0HTPJso%2FosY0nMkXQ4RDFTEIbdh%2BkPwlttAOF2uhA4Uk6FKzP9rZipx%2ByeyUotL39KywamkNlp920SFMvQ1SyRZKARRLla6vGLm5wLNIFzkE8iEXq91VGYI9nkZBJpE5ukejMWaRdo6FOZYr4bJgiZZU8bI8T3%2Bdkt14RVVnpPuHYo4xPUE2NPTq2h4TMLnZye8Rkzh4hPSSJObVZErJhlqxY7qpky9QElqnRIyrN4gDLMqVjJjP3A%2FvTFTmYte2o9qdaFasieTz7g8x2dIpOhCTklrzs9nR5aJrzLg5y6ZjkfM5zSzdDlDxiKjMyRnngpDM%2FilGyAC%2Fy30dTlp9wkoEw6YiB5zFKD0Q%2BDuKRk4Fg%2BlNsevwpIZsNvNCWpNCT0te5h%2FaHDTVBdp9KL%2FfDyZzCsDVsOsZDcHmrbo8Vio%2BU4MOFztLsVc0BisvpvK23Xhs4KGZirETGvSo6hhEyIRHSqzpsQqIfeVUQL%2Fr23r3Vn3F61Fk6FXjlXpXfSoynWBNEVK%2F5qb0qLj1eVUadKtwB0sd3qsK%2BqOI%2Bhwqamft3YiYQ3D2OmUnHaJfcofpeNxUyd9XJu8n5zBkgZDc5dXI7hLvO7fHt0MS3Q8k26A3YoNmrPOUlCmcsKJuO4UxZt0EHH28XhuUDG4RM13j8Rt1NpQ1d8EqzU2m1k7n8FGWXIsYcTwzaOFzmg1qyQSYf985Rawccf4GqRr2FDeYCgHnnPNc%2FZz2stmE%2BuiEbbtsGmKtkticms9guy7hoNgGaj62y%2FLLs4IyeZ9MT3s4ymIceBrgBZkqWLr2u3FfaFVwyFUl2n187RlNu3eGQmZIouFeEWWYzcUjGwFJ6sFc0PD6cU%2F%2F3yEqpQDYZ0S4hu%2B8fysh%2BKqs4iGJH0jOWWSFUI0%2B4kUbhm6kWRGQzPznVAn%2BF7mY8YBMed%2FxtbB7kheVasIF26F%2BfU04pGRjawZ1rbvPL0w7cYaCxuZgXph1LoB2L8fStuCSWONpxrsnOL087RFzt2NH9ewna8Qa047Ei1l6M%2F%2BY42oEdTc%2B1I%2BXaIeFqxwUvlMEB7XDJ%2BVK9NXs42nGuydAvTzso3HGhzAUneZOAerDXH0%2FEa9%2FCUY9zzZGeLvVgGeoYCkLhKsgFZwSdFmRXJLSP9%2BnIwVGQc82a%2FocKImWk%2FsDOYXHBiwo8APWotGdvJdVhcNQjT6SeVW8Kt7HBXnBHFQu0gXxkFyx5%2B46jDXkq9U1tEDKiDbgdU%2BwFd0zZ%2F8nuqDL4ZN%2F%2Bw5mbzeXJ1De1gf%2BeNuyaQ3DINBY0riJcrh6UgB40Crfug8rgLLDBnWvo%2B6z14JfzZS5BD9pADyh3XHuuajiLLvHnGuQ%2Baz345XyNbOkB3mSgcDZkhiYDQbeajtPDM6dOmcXjjpXgd6xs99vJQJjFLWWvuHcYih0FfYoyFXcMiTxOmUoZVOF4mQr7CjVWRamGYtu6eoXo7z1F2e%2BIXx%2Bn7MPHnCnGNLjVkzl1tBfgV0w0awuMeLGjXJFIEQeX%2Fs1oYIoW4uOB%2BTCRVrQypRGVaTiO%2BE%2FmQyZ5ftqj7BINQ21NCZx%2BMR67BZSWtVcymFGEYjeGkYeuWzSjSDgZ4ohrSd1ocMQ83noWSl12O%2FfvdmVUx1lCSkhHyqSjThZLEW%2BSUNhIDbhN3AnmLcSAKy0BW4nMFQFz87LITpuPEg5z6ciNlDMXTjxkpDRAV%2FaWQilHMu0mMVduyO5Tz6x0rfkQhzk6Zy5NzAFZGpjreItd4DLHAeYc%2B%2B3mtVqq4zCXjuw5OXMhc2Iq7FxxtapB28QlT2vKLifTPDF%2Bw2ktCOnImULl5PkiJh1uXTJjFcDYO6kVy%2BVw8mwyY%2BmYy39hJLEsJkk%2F6Mj4Fkm8AQ4p9fRZrNj5r6npy%2B2JoYBnLoLdfQN%2BAfBByI%2Bp7ej9JaGCAvS%2BAdy9KjXY76UtHCIozs19npgANIxsf2dXsTVDD2aQkxAKwvbKBO70O2VJuJ8IvwuUUwUadvuNFGugjwkHdjtCMUFP%2FGcM3wD8GgR%2FvTcFSI3RMsTrR58Fzun3rq36ABajNnD7fk%2BxxSWqljkCe8ApFBm5MSgp1PPsFnvlFJfmRffXRRetzP%2BinJKM9VdLdivN%2FuI%2F8QkniZqQkvQWMdt8VklggREWN201h7DVNCIFWtj%2BPoytbrXAdqz%2FkIRKbEGJlUzZN9ejF9LRSZ1nJfadB5HeAJKgEUCeOjGxlJnlsyKM0X72pWOHB38d8Q1ObcCxHhFURHEjXCZseI9%2BPDI47TsjRH7WFBE7oClSHMq385dbDLsjpqND%2BdyDYwITh4QhC9tZlpDxsQOvY3SjObX1siJJYPWeZdf9qNaGn686Dlh5r%2FEJgePoDavEI4L4DHXstq%2FnT0V4A74VnjfVBPCZvYf32VTGWTlLzHj38Zl5UxK34U1xIoewfwf0p3Zm7AyzbpMP4IexZ%2B3u71KYjq7knEK%2Fobix0oiAsIgnd%2BhTtH7bYQZ7pqAhgDsRWzrQGNGf%2BfWTf7LbmX2oypgt4diedKRYvzC%2FXqRwvfrDrqMFvPqgZista9fJYFUAWNO7ZVF9Ls9wwLrAFOnpAY4j48BJqMG5PAK4gw96KxoG3rLeg1fZnd01u87DBGfEm5iOWOml8kbRcQPHItx2lj82b147cu27H6oVmY7IT%2B6%2FB33y8ZW6BFSXxskdePqUDnzopX%2FLgV%2FlBvPPotPvwUu4mcZOO3MvfMzITJ8wXA2%2F4dW%2BEDo4gGYni%2B1gebFRu4os5bCKgPtXjYbATzmPSJT2zyOiEyflfk9hLdN0oqEV8FLDB7MHq4zK%2Fw%3D%3D):

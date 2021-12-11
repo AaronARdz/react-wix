@@ -4,6 +4,7 @@ import Menu from './Menu';
 import Table from './Table';
 import TableInventory from './TableInventory';
 import Product from './Product';
+import CreateProduct from './CreateProduct';
 
 class Body extends React.Component {
   constructor(props) {
@@ -60,6 +61,7 @@ class Body extends React.Component {
           onTokenChange={this.handleTokenChange}
         />
         <div class="container">
+          <CreateProduct />
         <Menu
           token={token}
           onProductsChange={this.handleProductsChange}

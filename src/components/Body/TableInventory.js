@@ -12,10 +12,14 @@ class TableInventory extends React.Component {
 
   render() {
     const array = this.props.inventory;
+    const dateOptions = {
+      timeZone: 'UTC',
+      timeZoneName: 'short'
+    }
 
     return (
       <div>
-        <table class="table">
+        <table className="table">
           <thead>
             <tr>
               <th scope="col">Id</th>
@@ -29,7 +33,7 @@ class TableInventory extends React.Component {
               <tr>
                 <th scope="row">{item.id}</th>
                 <td>{item.productId}</td>
-                <td>{item.LastUpdated}</td>
+                <td>{new Date(item.lastUpdated).toLocaleString('es-ES')}</td>
                 <td>{item.variants[0].inStock ?
                      'yes' : 'no'
                     }

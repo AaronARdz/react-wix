@@ -13,9 +13,17 @@ const getProduct = async (token,id) => {
   });
 }
 
+const createProduct = async (token,product) => {
+  return API.post(`product/create`, {
+    token,
+    product
+  });
+}
+
 const products = {
   getAllProducts,
-  getProduct
+  getProduct,
+  createProduct
 }
 
 export default products;

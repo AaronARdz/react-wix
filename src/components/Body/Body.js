@@ -61,13 +61,13 @@ class Body extends React.Component {
           onTokenChange={this.handleTokenChange}
         />
         <div class="container">
-          <CreateProduct />
         <Menu
           token={token}
           onProductsChange={this.handleProductsChange}
           onInventoryChange={this.handleInventoryChange}
           onTabChange={this.handleTabChange}
          />
+         <hr></hr>
          {/* TODO: BETTER SOLUTION TO SHOW TABLES */}
          {
            tab === 'Products' ? 
@@ -89,6 +89,10 @@ class Body extends React.Component {
           <p>No product available</p>
         }
         <p>{tab}</p>
+        <hr></hr>
+        <CreateProduct
+          token={token}
+           />
         </div>
       </div>
     )

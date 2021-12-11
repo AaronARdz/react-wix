@@ -22,6 +22,7 @@ class Header extends React.Component  {
   }
 
   render() {
+    const currentToken = this.props.token;
     return (
       <section className="py-5 text-center container">
         <div className="row py-lg-5">
@@ -30,6 +31,7 @@ class Header extends React.Component  {
             <p className="lead text-muted">Implementa las diferences opciones de la API de wix</p>
             <p>
               <button onClick={() => this.refresh()} className="btn btn-primary my-2" >Refresh Token</button>
+              <p>{currentToken ? 'Token acquired' : 'Please refresh token'}</p>
             </p>
           </div>
         </div>

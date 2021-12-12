@@ -1,11 +1,13 @@
 import refreshToken from './auth/credentials';
 import products from './products';
 import inventory from './inventory';
+import collections from './collections';
 
 const API = {
   refreshToken,
   products,
-  inventory
+  inventory,
+  collections
 }
 
 export default API;

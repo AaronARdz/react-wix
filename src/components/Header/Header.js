@@ -29,10 +29,10 @@ class Header extends React.Component  {
           <div className="col-lg-6 col-md-8 mx-auto">
             <h1 className="fw-light">WeShip Api test</h1>
             <p className="lead text-muted">Implementa las diferences opciones de la API de wix</p>
-            <p>
+            <div>
               <button onClick={() => this.refresh()} className="btn btn-primary my-2" >Refresh Token</button>
               <p>{currentToken ? 'Token acquired' : 'Please refresh token'}</p>
-            </p>
+            </div>
           </div>
         </div>
       </section>

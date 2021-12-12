@@ -91,7 +91,6 @@ class CreateProduct extends React.Component {
         } else {
           this.setState({ response: res.data.message });
         }
-        console.log(res.data)
       })
       .catch((error) => {
         console.error(error.message)
@@ -125,9 +124,9 @@ class CreateProduct extends React.Component {
             </div>
           </div>
 
-          <fieldset class="row mt-3">
-            <legend class="col-form-label col-sm-4 pt-0">Product type</legend>
-            <div class="col-sm-8">
+          <fieldset className="row mt-3">
+            <legend className="col-form-label col-sm-4 pt-0">Product type</legend>
+            <div className="col-sm-8">
               <div className="form-check">
                 <input className="form-check-input" 
                 value="physical"
@@ -184,21 +183,21 @@ class CreateProduct extends React.Component {
         <button className="w-100 btn btn-primary btn-lg" type="submit">Submit product</button>
         </div>
       </form>
-        <div ref={this.myRef} class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <div ref={this.myRef} className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
               <button 
               onClick={() => this.closeModal()}
-              type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            <div className="modal-body">
               <p>{ message }</p>
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
               <button type="button" 
-              class="btn btn-secondary" data-bs-dismiss="modal" onClick={() => this.closeModal()}>Close</button>
+              className="btn btn-secondary" data-bs-dismiss="modal" onClick={() => this.closeModal()}>Close</button>
             </div>
           </div>
         </div>

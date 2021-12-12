@@ -5,8 +5,9 @@ class Menu extends React.Component  {
   constructor(props) {
     super(props);
     this.ProductsChange = this.ProductsChange.bind(this);
-    this.HandleInventoryChange = this.HandleInventoryChange.bind(this);
     this.HandleTabChange = this.HandleTabChange.bind(this);
+    this.HandleInventoryChange = this.HandleInventoryChange.bind(this);
+    this.HandleCollectionsChange = this.HandleCollectionsChange.bind(this);
   }
 
   ProductsChange(value) {
@@ -15,6 +16,10 @@ class Menu extends React.Component  {
 
   HandleInventoryChange(value) {
     this.props.onInventoryChange(value);
+  }
+
+  HandleCollectionsChange(value) {
+    this.props.onCollectionsChange(value);
   }
 
   HandleTabChange(value) {
@@ -44,6 +49,17 @@ class Menu extends React.Component  {
     })
   }
 
+  getCollections(token) {
+    this.HandleTabChange('Collections');
+    API.collections.getCollections(token).then((res) => {
+      console.log(res.data.data);
+      this.HandleCollectionsChange(res.data.data.collections);
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+  }
+
   render() {
     const currentToken = this.props.token;
 
@@ -56,7 +72,7 @@ class Menu extends React.Component  {
           <button className="nav-link" onClick={() => this.getInventory(currentToken)} >Inventory</button>
         </li>
         <li className="nav-item">
-          <button className="nav-link" href="#">Collections</button>
+          <button className="nav-link" onClick={() => this.getCollections(currentToken)} >Collections</button>
         </li>
       </ul>
     )

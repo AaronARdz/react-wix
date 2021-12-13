@@ -29,9 +29,19 @@ class Collections extends React.Component {
   render() {
     const array = this.props.collections;
     const currentToken = this.props.token;
+    const currentCollection = this.props.collection;
 
     return (
       <div>
+        {
+          currentCollection.id ? 
+          <div className="alert alert-success" role="alert">
+            <p>Collection id: { currentCollection.id }</p>
+            <p>Collection name: { currentCollection.name }</p>
+            <p>Media items: { currentCollection.media.items.length }</p>
+          </div> :
+          ''
+        }
         <table className="table">
           <thead>
             <tr>

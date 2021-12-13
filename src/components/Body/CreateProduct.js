@@ -49,9 +49,6 @@ class CreateProduct extends React.Component {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
-    if (name === 'price') {
-      return
-    }
     let property = this.state.product;
     property[name] = value;
 
@@ -187,7 +184,7 @@ class CreateProduct extends React.Component {
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
+              <h5 className="modal-title" id="exampleModalLabel">Create Product</h5>
               <button 
               onClick={() => this.closeModal()}
               type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

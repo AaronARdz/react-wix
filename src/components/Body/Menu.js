@@ -26,9 +26,11 @@ class Menu extends React.Component  {
     this.props.onTabChange(value);
   }
 
+  changeTab(value) {
+    this.HandleTabChange(value);
+  }
+
   getAllProducts(token) {
-    console.log(token)
-    this.HandleTabChange('Products');
     API.products.getAllProducts(token).then((res) => {
       console.log(res.data.data)
       this.ProductsChange(res.data.data.products)
@@ -39,7 +41,6 @@ class Menu extends React.Component  {
   }
 
   getInventory(token) {
-    this.HandleTabChange('Inventory');
     API.inventory.getInventory(token).then((res) => {
       console.log(res.data.data);
       this.HandleInventoryChange(res.data.data.inventoryItems);
@@ -50,7 +51,6 @@ class Menu extends React.Component  {
   }
 
   getCollections(token) {
-    this.HandleTabChange('Collections');
     API.collections.getCollections(token).then((res) => {
       console.log(res.data.data);
       this.HandleCollectionsChange(res.data.data.collections);
@@ -62,19 +62,41 @@ class Menu extends React.Component  {
 
   render() {
     const currentToken = this.props.token;
-
+    const currentTab = this.props.tab;
+    
     return (
-      <ul className="nav nav-pills">
-        <li className="nav-item">
-          <button className="nav-link" onClick={() => this.getAllProducts(currentToken)} >Products</button>
-        </li>
-        <li className="nav-item">
-          <button className="nav-link" onClick={() => this.getInventory(currentToken)} >Inventory</button>
-        </li>
-        <li className="nav-item">
-          <button className="nav-link" onClick={() => this.getCollections(currentToken)} >Collections</button>
-        </li>
-      </ul>
+      <div className="row">
+        <ul className="nav nav-tabs col-12">
+          <li className="nav-item">
+            <button className={"nav-link " + (currentTab=== 'Products' ? "active" : '') }
+            onClick={() => this.changeTab('Products')}
+            >Products</button>
+          </li>
+          <li className="nav-item">
+            <button className={"nav-link " + (currentTab=== 'Inventory' ? "active" : '') }
+             onClick={() => this.changeTab('Inventory')}
+            >Inventory</button>
+          </li>
+          <li className="nav-item">
+            <button className={"nav-link " + (currentTab=== 'Collections' ? "active" : '') }
+             onClick={() => this.changeTab('Collections')}
+            >Collections</button>
+          </li>
+        </ul>
+        <div className="col-12">
+          <div className="row mt-4">
+            <div className="col-4">
+              <button className="btn btn-success" onClick={() => this.getAllProducts(currentToken)} >Refresh Products</button>
+            </div>
+            <div className="col-4">
+              <button className="btn btn-success" onClick={() => this.getInventory(currentToken)} >Refresh Inventory</button>
+            </div>
+            <div className="col-4">
+              <button className="btn btn-success" onClick={() => this.getCollections(currentToken)} >Refresh Collections</button>
+            </div>
+          </div>
+        </div>
+      </div>
     )
   }
 }

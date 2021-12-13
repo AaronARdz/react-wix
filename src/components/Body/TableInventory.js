@@ -12,10 +12,6 @@ class TableInventory extends React.Component {
 
   render() {
     const array = this.props.inventory;
-    const dateOptions = {
-      timeZone: 'UTC',
-      timeZoneName: 'short'
-    }
 
     return (
       <div>

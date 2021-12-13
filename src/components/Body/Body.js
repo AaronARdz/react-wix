@@ -6,6 +6,7 @@ import TableInventory from './TableInventory';
 import TableCollections from './TableCollections';
 import Product from './Product';
 import CreateProduct from './CreateProduct';
+import AddProductToCollection from './AddProducts';
 
 class Body extends React.Component {
   constructor(props) {
@@ -78,9 +79,9 @@ class Body extends React.Component {
           onTokenChange={this.handleTokenChange}
         />
         <div className="container">
-          <p>{collection.id}</p>
         <Menu
           token={token}
+          tab={tab}
           onProductsChange={this.handleProductsChange}
           onInventoryChange={this.handleInventoryChange}
           onCollectionsChange={this.handleCollectionsChange}
@@ -90,11 +91,19 @@ class Body extends React.Component {
          {/* TODO: BETTER SOLUTION TO SHOW TABLES */}
          {
            tab === 'Products' ? 
-           <Table
-           products={products}
-           token={token}
-           onProductChange={this.handleSingleProductChange}
-         /> : ''
+           <div>
+            <Table
+            products={products}
+            token={token}
+            onProductChange={this.handleSingleProductChange}
+          />
+          <CreateProduct token={token}/>
+          { product ? 
+          <Product product={product} /> :
+          <p>No product available to show</p>
+          }
+          </div>
+         : ''
          }
         {
            tab === 'Inventory' ? 
@@ -105,22 +114,18 @@ class Body extends React.Component {
          }
         {
            tab === 'Collections' ? 
-           <TableCollections
-           token={token}
-           collections={collections}
-           onCollectionsChange={this.handleCollectionChange}
-           onSingleCollectionChange={this.handleSingleCollectionChange}
-         /> : ''
+           <div>
+            <TableCollections
+              token={token}
+              collections={collections}
+              collection={collection}
+              onCollectionsChange={this.handleCollectionChange}
+              onSingleCollectionChange={this.handleSingleCollectionChange}
+            />
+            <AddProductToCollection token={token} />
+           </div> : ''
          }
-        {
-          product ? <Product product={product} /> :
-          <p>No product available to show</p>
-        }
-        <p>{tab}</p>
         <hr></hr>
-        <CreateProduct
-          token={token}
-           />
         </div>
       </div>
     )
